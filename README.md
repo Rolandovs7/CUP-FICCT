@@ -1,6 +1,14 @@
 # 🎓 CUP FICCT — Sistema Web de Admisión Universitaria
 
-**Laravel 12** · **PHP 8.3+** · **PostgreSQL** · **Bootstrap 5** · **Blade**
+![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Blade](https://img.shields.io/badge/Blade-Template-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+
+Aplicación web completa para administrar el proceso de admisión al Curso Preuniversitario (CUP) de la Facultad de Ingeniería de Ciencias de la Computación y Telecomunicaciones (FICCT) - UAGRM.
+
+---
 
 Aplicación web completa para administrar el proceso de admisión al Curso Preuniversitario (CUP) de la Facultad de Ingeniería de Ciencias de la Computación y Telecomunicaciones (FICCT) - UAGRM.
 
