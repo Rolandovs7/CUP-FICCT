@@ -1,60 +1,158 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🎓 CUP FICCT — Sistema Web de Admisión Universitaria
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Laravel 12** · **PHP 8.3+** · **PostgreSQL** · **Bootstrap 5** · **Blade**
 
-## About Laravel
+Aplicación web completa para administrar el proceso de admisión al Curso Preuniversitario (CUP) de la Facultad de Ingeniería de Ciencias de la Computación y Telecomunicaciones (FICCT) - UAGRM.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🎯 Características por Rol
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Administrador
+- 🔐 Inicio de sesión seguro
+- 👥 CRUD completo de usuarios, postulantes, docentes
+- 📚 Gestión de carreras, grupos, aulas y horarios
+- 📝 Registro de notas por materia (3 exámenes)
+- ✅ Registro de asistencias
+- 💳 Gestión de pagos
+- 📊 Dashboard con KPIs ejecutivos
+- 📈 Reportes estadísticos (HTML, PDF, Excel)
+- 📋 Bitácora de acciones del sistema
 
-## Learning Laravel
+### Coordinador Académico
+- 📊 Dashboard propio
+- 👥 Consulta de postulantes
+- 📚 Consulta de grupos, horarios
+- 📈 Reportes limitados
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Docente
+- 📊 Dashboard propio
+- 👥 Ver mis grupos asignados
+- 📝 Registrar notas por postulante
+- ✅ Registrar asistencia por grupo
+- 🕐 Consulta de carga horaria
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Postulante
+- 📊 Dashboard propio
+- 👤 Consulta de perfil
+- 📝 Consulta de calificaciones y promedio
+- 🏫 Grupo asignado y horarios
+- 💳 Gestión de pagos
+- 📈 Estado de admisión
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## 🛠️ Stack Tecnológico
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+| Capa | Tecnología |
+|------|------------|
+| **Backend** | PHP 8.3+ / Laravel 12 |
+| **Frontend** | Blade + Bootstrap 5.3 + Vite |
+| **Base de Datos** | PostgreSQL |
+| **Autenticación** | Laravel Breeze |
+| **PDF** | barryvdh/laravel-dompdf |
+| **Excel** | maatwebsite/excel |
+| **Gráficos** | Chart.js |
+| **Pagos** | PayPal Sandbox |
+| **Control de Versiones** | Git + GitHub |
 
-```bash
-composer require laravel/boost --dev
+---
 
-php artisan boost:install
-```
+## ✅ Requisitos Previos
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+| Herramienta | Versión Mínima |
+|-------------|----------------|
+| PHP | 8.3+ |
+| Composer | 2.x |
+| Node.js | 20+ |
+| PostgreSQL | 16+ |
+| Git | 2.40+ |
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🚀 Instalación y Ejecución
 
-## Code of Conduct
+### Paso 1: Clonar el Repositorio
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+git clone https://github.com/Rolandovs7/CUP-FICCT.git
+cd CUP-FICCT
 
-## Security Vulnerabilities
+### Paso 2: Crear la Base de Datos
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+sudo -u postgres psql
 
-## License
+CREATE DATABASE "CUPFICCT";
+CREATE USER tu_usuario WITH PASSWORD 'tu_contraseña';
+GRANT ALL PRIVILEGES ON DATABASE "CUPFICCT" TO tu_usuario;
+ALTER USER tu_usuario CREATEDB;
+\q
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Paso 3: Instalar Dependencias
 
-Proyecto actualizado por kayutzu94
+composer install
+npm install
+npm run build
+
+### Paso 4: Configurar el archivo .env
+
+cp .env.example .env
+nano .env
+
+Configurar la conexión a PostgreSQL:
+
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=CUPFICCT
+DB_USERNAME=
+DB_PASSWORD=
+
+### Paso 5: Generar Clave y Migrar
+
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+
+### Paso 6: Iniciar el Servidor
+
+php artisan serve
+
+**Acceso:** http://localhost:8000
+
+---
+
+## 📚 Documentación
+
+La documentación del proyecto sigue el **Proceso Unificado de Desarrollo de Software (PUDS)**, incluyendo:
+
+- Diagramas de Casos de Uso
+- Diagramas de Clases (Análisis + Diseño)
+- Diagramas de Secuencia
+- Diagramas de Actividad
+- Diagramas de Componentes y Despliegue
+- Modelo Entidad-Relación
+
+---
+
+## 👥 Equipo
+
+| Estudiante | Registro | Rol |
+|------------|----------|-----|
+| Rolando Velasco Soliz | 223044768 | Full Stack Developer |
+| Jimena Jahuira Poma | 223042951 | Documentación |
+
+**Materia:** Sistemas de Información I  
+**Sigla:** INF411-SA  
+**Grupo:** #23  
+**Semestre:** 1-2026  
+**Facultad:** FICCT - UAGRM
+
+---
+
+## 🙏 Agradecimientos
+
+Proyecto desarrollado como parte del curso **Sistemas de Información I** aplicando el Proceso Unificado de Desarrollo de Software (PUDS).
+
+---
+
+⭐ Si este proyecto te resultó útil, dale una estrella en GitHub.
